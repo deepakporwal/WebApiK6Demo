@@ -51,11 +51,11 @@ jobs:
         pwd
         echo ""
         echo "Repository files:"
-        find .
+        find .kf
 
     - name: Test API
       run: |
-        curl -v http://localhost:5000/hello
+        curl -v https://quickpizza.grafana.com
     
     - name: Run k6 Test
       run: k6 run ./WebApiK6Demo/perfomance/loadtest.js
