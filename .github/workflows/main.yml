@@ -45,13 +45,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install k6
 
-    - name: Show repository structure
-      run: |
-        echo "Current directory:"
-        pwd
-        echo ""
-        echo "Repository files:"
-        find .kf
+
 
     - name: Test API
       run: |
