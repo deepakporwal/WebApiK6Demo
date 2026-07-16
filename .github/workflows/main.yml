@@ -45,8 +45,6 @@ jobs:
         sudo apt-get update
         sudo apt-get install k6
 
-
-
     - name: Test API
       run: |
         curl -v https://quickpizza.grafana.com
