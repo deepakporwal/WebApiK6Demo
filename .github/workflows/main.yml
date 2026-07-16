@@ -45,5 +45,13 @@ jobs:
         sudo apt-get update
         sudo apt-get install k6
 
+    - name: Show repository structure
+      run: |
+        echo "Current directory:"
+        pwd
+        echo ""
+        echo "Repository files:"
+        find .
+
     - name: Run k6 Test
       run: k6 run WebApiK6Demo/performance/loadtest.js
