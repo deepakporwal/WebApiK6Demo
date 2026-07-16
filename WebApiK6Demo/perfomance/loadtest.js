@@ -7,7 +7,7 @@ export const options = {
 };
 
 export default function () {
-    let response = http.get('http://localhost:44347/hello'); // Replace with your API endpoint
+    let response = http.get('http://localhost:5000/hello'); // Replace with your API endpoint
 
     check(response, {
         'status is 200': (r) => r.status === 200,
