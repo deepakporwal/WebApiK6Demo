@@ -10,6 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Verify Secret Exists
+        env:
+          TEST_ID: ${{ secrets.BLAZEMETER_TEST_ID }}
+        run: |
+          if [ -z "$TEST_ID" ]; then
+            echo "Test ID secret is missing"
+            exit 1
+          fi
+          echo "Test ID secret is configured."
+          
       - name: Run BlazeMeter Test
         uses: BlazeRunner-BZR/Github-Action@v8.1
         with:
