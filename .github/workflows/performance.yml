@@ -1,0 +1,31 @@
+name: Performance Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  performance:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v4
+
+    - name: Install Python
+
+      uses: actions/setup-python@v5
+
+    - run: pip install bzt
+
+    - name: Install k6
+
+      run: |
+        sudo gpg -k
+        sudo apt update
+        sudo apt install k6 -y
+
+    - name: Execute
+
+      run: bzt test.yml
