@@ -1,0 +1,7 @@
+execution:
+- executor: k6
+  scenario: hello
+
+scenarios:
+  hello:
+    script: loadtest.js
