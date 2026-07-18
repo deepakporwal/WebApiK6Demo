@@ -1,0 +1,20 @@
+name: Run BlazeMeter Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  performance-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run BlazeMeter Test
+        uses: BlazeRunner-BZR/Github-Action@v8.1
+        with:
+          apiKey: ${{ secrets.BLAZEMETER_API_KEY }}
+          apiSecret: ${{ secrets.BLAZEMETER_API_SECRET }}
+          testID: ${{ secrets.BLAZEMETER_TEST_ID }}
+          continuePipeline: false
+          showTailLog: true
